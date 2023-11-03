@@ -36,15 +36,15 @@ quantity_drugs_seized_by_tablets <- quantity_drugs_seized %>%
 
 ggplot(quantity_drugs_seized_by_kg,aes(x = year_new, y = amount_new, fill = drug)) + 
   geom_bar(position = "dodge", stat = "identity") +
-  labs(x = "Drug", y = "Quantity (in Kilograms)", title = "Quantity of Drugs Seized (in Kilograms)")
+  labs(x = "Drug", y = "Quantity (in Kilograms)", title = "Quantity of Drugs Seized (in Kilograms)", fill = "Drug Type")
 
 ggplot(quantity_drugs_seized_by_g,aes(x = year_new, y = amount_new, fill = drug)) + 
   geom_bar(position = "dodge", stat = "identity") +
-  labs(x = "Drug", y = "Quantity (in Grams)", title = "Quantity of Drugs Seized (in Grams)")
+  labs(x = "Drug", y = "Quantity (in Grams)", title = "Quantity of Drugs Seized (in Grams)", fill = "Drug Type")
 
 ggplot(quantity_drugs_seized_by_tablets,aes(x = year_new, y = amount_new, fill = drug)) + 
   geom_bar(position = "dodge", stat = "identity") +
-  labs(x = "Drug", y = "Quantity (in Tablets)", title = "Quantity of Drugs Seized (in Tablets)")
+  labs(x = "Drug", y = "Quantity (in Tablets)", title = "Quantity of Drugs Seized (in Tablets)", fill = "Drug Type")
 ```
 
 ## Making Sense of the Numbers
