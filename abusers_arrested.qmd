@@ -11,38 +11,57 @@ title: "Inhalant Abusers Arrested"
 
 ```{r,echo=FALSE,eval=TRUE,message=FALSE}
 library(tidyverse)
-library(ggplot2)
+
 abusers_by_status <- read_csv("DataonInhalantAbusersArrestedByStatus.csv")
 abusers_by_status <- abusers_by_status %>%
-  mutate(year_new = as.character(abusers_by_status$year))
+  mutate(year_new = as.character(abusers_by_status$year)) %>%
+  rename(Population = no_of_inhalant_abusers_arrested) %>%
+  rename(Status = status) %>%
+  rename(Year = year_new)
 
 abusers_by_age <- read_csv("DataonInhalantAbusersArrestedbyAgeGroup.csv")
 abusers_by_age <- abusers_by_age %>%
-  mutate(year_new = as.character(abusers_by_age$year))
+  mutate(year_new = as.character(abusers_by_age$year)) %>%
+  rename(Population = no_of_inhalant_abusers_arrested) %>%
+  rename(Age = age_group) %>%
+  rename(Year = year_new)
 
 abusers_by_gender <- read_csv("DataonInhalantAbusersArrestedByGender.csv")
 abusers_by_gender <- abusers_by_gender %>%
-  mutate(year_new = as.character(abusers_by_gender$year))
+  mutate(year_new = as.character(abusers_by_gender$year)) %>%
+  rename(Population = no_of_inhalant_abusers_arrested) %>%
+  rename(Gender = gender) %>%
+  rename(Year = year_new)
 
 abusers_by_ethnicity <- read_csv("DataonInhalantAbusersArrestedByEthnicGroup.csv")
 abusers_by_ethnicity <- abusers_by_ethnicity %>%
-  mutate(year_new = as.character(abusers_by_ethnicity$year))
+  mutate(year_new = as.character(abusers_by_ethnicity$year)) %>%
+  rename(Population = no_of_inhalant_abusers_arrested) %>%
+  rename(Ethnicity = race) %>%
+  rename(Year = year_new)
 
-ggplot(abusers_by_status,aes(x = year_new, y = no_of_inhalant_abusers_arrested, fill = status)) + 
-  geom_bar(position = "dodge", stat = "identity") +
-  labs(x = "Inhalant Abusers Arrested", y = "Number", title = "Status of Inhalant Abusers Arrested", fill = "Status")
+library(ggplot2)
+library(plotly)
 
-ggplot(abusers_by_age,aes(x = year_new, y = no_of_inhalant_abusers_arrested, fill = age_group)) + 
+arrested_status <- ggplot(abusers_by_status,aes(x = Year, y = Population, fill = Status)) + 
   geom_bar(position = "dodge", stat = "identity") +
-  labs(x = "Inhalant Abusers Arrested", y = "Number", title = "Age of Inhalant Abusers Arrested", fill = "Age Group")
+  labs(x = "Year", y = "Population", title = "Status of Inhalant Abusers Arrested", fill = "Status")
+ggplotly(arrested_status)
 
-ggplot(abusers_by_gender,aes(x = year_new, y = no_of_inhalant_abusers_arrested, fill = gender)) + 
+arrested_age <- ggplot(abusers_by_age,aes(x = Year, y = Population, fill = Age)) + 
   geom_bar(position = "dodge", stat = "identity") +
-  labs(x = "Inhalant Abusers Arrested", y = "Number", title = "Gender of Inhalant Abusers Arrested", fill = "Gender")
+  labs(x = "Year", y = "Population", title = "Age of Inhalant Abusers Arrested", fill = "Age Group")
+ggplotly(arrested_age)
 
-ggplot(abusers_by_ethnicity,aes(x = year_new, y = no_of_inhalant_abusers_arrested, fill = race)) + 
+arrested_gender <- ggplot(abusers_by_gender,aes(x = Year, y = Population, fill = Gender)) + 
   geom_bar(position = "dodge", stat = "identity") +
-  labs(x = "Inhalant Abusers Arrested", y = "Number", title = "Ethnicity of Inhalant Abusers Arrested", fill = "Ethnicity")
+  labs(x = "Year", y = "Population", title = "Gender of Inhalant Abusers Arrested", fill = "Gender")
+ggplotly(arrested_gender)
+
+arrested_ethnicity <- ggplot(abusers_by_ethnicity,aes(x = Year, y = Population, fill = Ethnicity)) + 
+  geom_bar(position = "dodge", stat = "identity") +
+  labs(x = "Year", y = "Population", title = "Ethnicity of Inhalant Abusers Arrested", fill = "Ethnicity")
+ggplotly(arrested_ethnicity)
 ```
 
 ## Making Sense of the Numbers

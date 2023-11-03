@@ -11,44 +11,63 @@ title: "Drug Rehabilitation Centre"
 
 ```{r,echo=FALSE,eval=TRUE,message=FALSE}
 library(tidyverse)
-library(ggplot2)
+
 inmates_by_age_before2020 <- read_csv("PopulationofInmatesinDrugRehabilitationCentreDRCbyAgeGroup20062020.csv")
 inmates_by_age_before2020[inmates_by_age_before2020 == "60 Above"] <- "60 & Above"
 inmates_by_age_before2020 <- inmates_by_age_before2020 %>%
-  mutate(year_new = as.character(inmates_by_age_before2020$year))
+  mutate(year_new = as.character(inmates_by_age_before2020$year)) %>%
+  rename(Population = number_of_population) %>%
+  rename(Age = population_by_age_group) %>%
+  rename(Year = year_new)
 
 inmates_by_age_after2020 <- read_csv("PopulationofInmatesinDrugRehabilitationCentreDRCbyAgeGroup2020onwards.csv")
 inmates_by_age_after2020[inmates_by_age_after2020 == "19 & below"] <- "19 & Below"
 inmates_by_age_after2020[inmates_by_age_after2020 == "75 & above"] <- "75 & Above"
 inmates_by_age_after2020 <- inmates_by_age_after2020 %>%
-  mutate(year_new = as.character(inmates_by_age_after2020$year))
+  mutate(year_new = as.character(inmates_by_age_after2020$year)) %>%
+  rename(Population = number_of_population) %>%
+  rename(Age = population_by_age_group) %>%
+  rename(Year = year_new)
 
 inmates_by_gender <- read_csv("PopulationofInmatesinDrugRehabilitationCentreDRCbyGender.csv")
 inmates_by_gender <- inmates_by_gender %>%
-  mutate(year_new = as.character(inmates_by_gender$year))
+  mutate(year_new = as.character(inmates_by_gender$year)) %>%
+  rename(Population = number_of_population) %>%
+  rename(Gender = population_by_gender) %>%
+  rename(Year = year_new)
 
 inmates_by_education <- read_csv("PopulationofInmatesinDrugRehabilitationCentreDRCbyEducationLevel.csv")
 inmates_by_education[inmates_by_education == "Tertiary and Above"] <- "Tertiary & Above"
 inmates_by_education[inmates_by_education == "Pre University"] <- "Pre-University"
 inmates_by_education[inmates_by_education == "PreU"] <- "Pre-University"
 inmates_by_education <- inmates_by_education %>%
-  mutate(year_new = as.character(inmates_by_education$year))
+  mutate(year_new = as.character(inmates_by_education$year)) %>%
+  rename(Population = number_of_population) %>%
+  rename(Education = population_by_education_level) %>%
+  rename(Year = year_new)
 
-ggplot(inmates_by_age_before2020,aes(x = year_new, y = number_of_population, fill = population_by_age_group)) + 
-  geom_bar(position = "dodge", stat = "identity") +
-  labs(x = "Inmates at the Drug Rehabilitation Centre", y = "Number", title = "Age of Inmates at the Drug Rehabilitation Centre (Before 2020)", fill = "Age Group")
+library(ggplot2)
+library(plotly)
 
-ggplot(inmates_by_age_after2020,aes(x = year_new, y = number_of_population, fill = population_by_age_group)) + 
+inmates_age_before_2020 <- ggplot(inmates_by_age_before2020,aes(x = Year, y = Population, fill = Age)) + 
   geom_bar(position = "dodge", stat = "identity") +
-  labs(x = "Inmates at the Drug Rehabilitation Centre", y = "Number", title = "Age of Inmates at the Drug Rehabilitation Centre (After 2020)", fill = "Age Group")
+  labs(x = "Year", y = "Population", title = "Age of Inmates at the Drug Rehabilitation Centre (Before 2020)", fill = "Age Group")
+ggplotly(inmates_age_before_2020)
 
-ggplot(inmates_by_gender,aes(x = year_new, y = number_of_population, fill = population_by_gender)) + 
+inmates_age_after_2020 <- ggplot(inmates_by_age_after2020,aes(x = Year, y = Population, fill = Age)) + 
   geom_bar(position = "dodge", stat = "identity") +
-  labs(x = "Inmates at the Drug Rehabilitation Centre", y = "Number", title = "Gender of Inmates at the Drug Rehabilitation Centre", fill = "Gender")
+  labs(x = "Year", y = "Population", title = "Age of Inmates at the Drug Rehabilitation Centre (After 2020)", fill = "Age Group")
+ggplotly(inmates_age_after_2020)
 
-ggplot(inmates_by_education,aes(x = year_new, y = number_of_population, fill = population_by_education_level)) + 
+inmates_gender <- ggplot(inmates_by_gender,aes(x = Year, y = Population, fill = Gender)) + 
   geom_bar(position = "dodge", stat = "identity") +
-  labs(x = "Inmates at the Drug Rehabilitation Centre", y = "Number", title = "Education Level of Inmates at the Drug Rehabilitation Centre", fill = "Education Level")
+  labs(x = "Year", y = "Population", title = "Gender of Inmates at the Drug Rehabilitation Centre", fill = "Gender")
+ggplotly(inmates_gender)
+
+inmates_education <- ggplot(inmates_by_education,aes(x = Year, y = Population, fill = Education)) + 
+  geom_bar(position = "dodge", stat = "identity") +
+  labs(x = "Year", y = "Population", title = "Education Level of Inmates at the Drug Rehabilitation Centre", fill = "Education Level")
+ggplotly(inmates_education)
 ```
 
 ## Making Sense of the Numbers
