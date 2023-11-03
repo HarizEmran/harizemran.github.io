@@ -1,0 +1,52 @@
+---
+title: "Popular Drug Types"
+---
+
+## Popular Drug Types (by Measurement)
+
+```{r,echo=FALSE,eval=TRUE,message=FALSE,warning=FALSE}
+library(tidyverse)
+quantity_drugs_seized <- read_csv("Informationonquantityofcontrolleddrugsseized.csv")
+quantity_drugs_seized <- quantity_drugs_seized %>%
+  mutate(amount_new = as.numeric(quantity_drugs_seized$amount)) %>%
+  mutate(year_new = as.character(quantity_drugs_seized$year))
+quantity_drugs_seized[quantity_drugs_seized == "HEROIN"] <- "Heroin"
+quantity_drugs_seized[quantity_drugs_seized == "HEROIN NO.4"] <- "Heroin No.4"
+quantity_drugs_seized[quantity_drugs_seized == "CANNABIS"] <- "Cannabis"
+quantity_drugs_seized[quantity_drugs_seized == "ECSTASY"] <- "Ecstasy"
+quantity_drugs_seized[quantity_drugs_seized == "ICE"] <- "Ice"
+quantity_drugs_seized[quantity_drugs_seized == "YABA"] <- "Yaba"
+quantity_drugs_seized[quantity_drugs_seized == "KETAMINE"] <- "Ketamine"
+quantity_drugs_seized[quantity_drugs_seized == "ERIMIN 5"] <- "Erimin 5"
+quantity_drugs_seized[quantity_drugs_seized == "BUPRENORPHINE"] <- "Buprenorphine"
+quantity_drugs_seized[quantity_drugs_seized == "OPIUM"] <- "Opium"
+quantity_drugs_seized[quantity_drugs_seized == "MEPHEDRONE"] <- "Mephedrone"
+
+quantity_drugs_seized_by_kg <- quantity_drugs_seized %>%
+  select(year_new, drug, amount_new) %>%
+  slice(1:57, 79:97, 117:135)
+
+quantity_drugs_seized_by_g <- quantity_drugs_seized %>%
+  select(year_new, drug, amount_new) %>%
+  slice(171:189, 212:219)
+
+quantity_drugs_seized_by_tablets <- quantity_drugs_seized %>%
+  select(year_new, drug, amount_new) %>%
+  slice(58:75, 77, 98:116, 136:170)
+
+ggplot(quantity_drugs_seized_by_kg,aes(x = year_new, y = amount_new, fill = drug)) + 
+  geom_bar(position = "dodge", stat = "identity") +
+  labs(x = "Drug", y = "Quantity (in Kilograms)", title = "Quantity of Drugs Seized (in Kilograms)")
+
+ggplot(quantity_drugs_seized_by_g,aes(x = year_new, y = amount_new, fill = drug)) + 
+  geom_bar(position = "dodge", stat = "identity") +
+  labs(x = "Drug", y = "Quantity (in Grams)", title = "Quantity of Drugs Seized (in Grams)")
+
+ggplot(quantity_drugs_seized_by_tablets,aes(x = year_new, y = amount_new, fill = drug)) + 
+  geom_bar(position = "dodge", stat = "identity") +
+  labs(x = "Drug", y = "Quantity (in Tablets)", title = "Quantity of Drugs Seized (in Tablets)")
+```
+
+## Making Sense of the Numbers
+
+(insert text)

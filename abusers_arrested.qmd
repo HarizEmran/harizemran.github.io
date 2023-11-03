@@ -1,0 +1,50 @@
+---
+title: "Inhalant Abusers Arrested"
+---
+
+## Who are Inhalant Abusers?
+
+(insert text on inhalant abusers)
+(video on DRC)
+
+## Statistics of Inhalant Abusers Arrested
+
+```{r,echo=FALSE,eval=TRUE,message=FALSE}
+library(tidyverse)
+library(ggplot2)
+abusers_by_status <- read_csv("DataonInhalantAbusersArrestedByStatus.csv")
+abusers_by_status <- abusers_by_status %>%
+  mutate(year_new = as.character(abusers_by_status$year))
+
+abusers_by_age <- read_csv("DataonInhalantAbusersArrestedbyAgeGroup.csv")
+abusers_by_age <- abusers_by_age %>%
+  mutate(year_new = as.character(abusers_by_age$year))
+
+abusers_by_gender <- read_csv("DataonInhalantAbusersArrestedByGender.csv")
+abusers_by_gender <- abusers_by_gender %>%
+  mutate(year_new = as.character(abusers_by_gender$year))
+
+abusers_by_ethnicity <- read_csv("DataonInhalantAbusersArrestedByEthnicGroup.csv")
+abusers_by_ethnicity <- abusers_by_ethnicity %>%
+  mutate(year_new = as.character(abusers_by_ethnicity$year))
+
+ggplot(abusers_by_status,aes(x = year_new, y = no_of_inhalant_abusers_arrested, fill = status)) + 
+  geom_bar(position = "dodge", stat = "identity") +
+  labs(x = "Inhalant Abusers Arrested", y = "Number", title = "Status of Inhalant Abusers Arrested", fill = "Status")
+
+ggplot(abusers_by_age,aes(x = year_new, y = no_of_inhalant_abusers_arrested, fill = age_group)) + 
+  geom_bar(position = "dodge", stat = "identity") +
+  labs(x = "Inhalant Abusers Arrested", y = "Number", title = "Age of Inhalant Abusers Arrested", fill = "Age Group")
+
+ggplot(abusers_by_gender,aes(x = year_new, y = no_of_inhalant_abusers_arrested, fill = gender)) + 
+  geom_bar(position = "dodge", stat = "identity") +
+  labs(x = "Inhalant Abusers Arrested", y = "Number", title = "Gender of Inhalant Abusers Arrested", fill = "Gender")
+
+ggplot(abusers_by_ethnicity,aes(x = year_new, y = no_of_inhalant_abusers_arrested, fill = race)) + 
+  geom_bar(position = "dodge", stat = "identity") +
+  labs(x = "Inhalant Abusers Arrested", y = "Number", title = "Ethnicity of Inhalant Abusers Arrested", fill = "Ethnicity")
+```
+
+## Making Sense of the Numbers
+
+(insert text)

@@ -3,11 +3,17 @@ project:
   output-dir: docs
 
 website:
-  title: "Drug Abuse & Rehabilitation in Singapore"
+  title: "Finding the Antidote to Singapore's Drug Problem"
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: drug_type.qmd
+        text: Popular Drug Types
+      - href: abusers_arrested.qmd
+        text: Inhalant Abusers Arrested
+      - href: drc_inmates.qmd
+        text: Drug Rehabilitation Centre
       - href: about.qmd
         text: About
 
