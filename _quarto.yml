@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Finding the Antidote to Singapore's Drug Problem"
+  title: "Singapore's Addiction to Drugs"
   navbar:
     left:
       - href: index.qmd

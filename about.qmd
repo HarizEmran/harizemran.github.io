@@ -10,7 +10,7 @@ Hello there! I am Hariz Emran. I am currently a Year 3 NUS undergraduate, majori
 
 ## Website
 
-This site is part of my final project for the NM2207 Computational Media Literacy module that I am currently taking this semester. I shall attempt to display some trends surrounding *drug abuse and rehabilitation in Singapore*, based on publicly available data sets obtained from <https://beta.data.gov.sg/>. I am heavily invested in societal issues, such as this one, which motivated me to explore this topic further.
+This site is part of my final project for the NM2207 Computational Media Literacy module that I am currently taking this semester. This project shall attempt to display some trends surrounding *drug abuse and rehabilitation in Singapore*, based on publicly available data sets obtained from <https://beta.data.gov.sg/> and offer its own analysis of current measures as well as suggestions for improvement of such measures. I am heavily invested in societal issues, such as this one, which motivated me to explore this topic further.
 
 ## Code
 
