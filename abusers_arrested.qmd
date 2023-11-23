@@ -1,5 +1,5 @@
 ---
-title: "Inhalant Abusers Arrested"
+title: "Inhalant Abuse"
 ---
 
 ## Inhalant Abuse in Singapore
@@ -90,7 +90,7 @@ ggplotly(arrested_age)
 
 (Note: Interact with the graph to view the values)
 
-The trend of inhalant abusers being arrested preponderantly consisting of youth below 20 seems to have diminished over the years with a largely proportional number of abusers hailing from each age group. Some might argue that this indicates the effectiveness of CNB's [*Structured Rehabilitation & Aftercare Programmes*](index.qmd), namely the [Drug Rehabilitation Centre (DRC)](index.qmd), Drug Supervision Scheme (DSS) and Community Rehabilitation Centre (CRC). However, this contradicts the findings of the IMH survey^2^ that suggest that youths make up a significant number of drug abusers. Thus, this trend being displayed might not be truly indicative of the real numbers of inhalant abusers on the ground as they could potentially be becoming more adept at avoiding being caught and arrested.
+The trend of inhalant abusers being arrested preponderantly consisting of youth below 20 seems to have diminished over the years with a largely proportional number of abusers hailing from each age group. Some might argue that this indicates the effectiveness of CNB's [*Structured Rehabilitation & Aftercare Programmes*](index.qmd), namely the [Drug Rehabilitation Centre (DRC)](drc_inmates.qmd), Drug Supervision Scheme (DSS) and Community Rehabilitation Centre (CRC). However, this contradicts the findings of the IMH survey^2^ that suggest that youths make up a significant number of drug abusers. Thus, this trend being displayed might not be truly indicative of the real numbers of inhalant abusers on the ground as they could potentially be becoming more adept at avoiding being caught and arrested.
 
 ```{r,echo=FALSE,eval=TRUE,message=FALSE}
 library(ggplot2)
