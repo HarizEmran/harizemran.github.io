@@ -4,6 +4,8 @@ title: "Inhalant Abusers Arrested"
 
 ## Inhalant Abuse in Singapore
 
+![](inhalants.jpeg){fig-align="center" width="312"}
+
 Also known as Glue-Sniffing, Solvent Abuse, Solvent Inhalation and Solvent Sniffing, Inhalant Abuse refers to the sniffing of vapours and fumes emitted by some substances, such as glue and paint thinner^1^. Inhalant abuse affects the growth and development of muscles, nerves and organs. For an inhalant abuser, normal activities like running and shouting can cause death by heart failure. They may also die from suffocation anytime. This is known as Sudden Sniffing Death and it can happen on the very first time or any other time the abuser sniffs glue.
 
 Some of the effects of inhalant abuse^1^ include permanent damage to brain, liver and kidneys, prone to bleeding and bruises, memory loss, difficulty in learning and seeing things clearly, loss of control of body as well as cramps, pains and bad cough.
@@ -46,7 +48,7 @@ abusers_by_ethnicity <- abusers_by_ethnicity %>%
   rename(Year = year_new)
 ```
 
-While the real numbers of inhalant abusers in Singapore cannot realistically be obtained, the number of such abusers arrested^3^ should give some form of reliable indication given the pervasive nature of the country’s surveillance and law enforcement.
+While the real numbers of inhalant abusers in Singapore cannot realistically be obtained, the number of such abusers arrested^3^ should give some form of reliable indication given the pervasive nature of the country's surveillance and law enforcement.
 
 ```{r,echo=FALSE,eval=TRUE,message=FALSE}
 library(ggplot2)
@@ -60,7 +62,7 @@ ggplotly(arrested_status)
 
 (Note: Interact with the graph to view the values)
 
-There has been an overall decline in the number of new and repeat inhalant abusers being arrested. The decreasing number of repeat abusers might be indicative of the effectiveness of the Central Narcotics Bureau’s (CNB) strategy of [*Structured Rehabilitation & Aftercare Programmes*](index.qmd). The number of new abusers that was once consistently higher than that of repeat abusers has evolved to become consistently lower than the latter, hinting at the effectiveness of CNB’s [*Preventive Drug Education (PDE)*](index.qmd) as well. 
+There has been an overall decline in the number of new and repeat inhalant abusers being arrested. The decreasing number of repeat abusers might be indicative of the effectiveness of the Central Narcotics Bureau's (CNB) strategy of [*Structured Rehabilitation & Aftercare Programmes*](index.qmd). The number of new abusers that was once consistently higher than that of repeat abusers has evolved to become consistently lower than the latter, hinting at the effectiveness of CNB's [*Preventive Drug Education (PDE)*](index.qmd) as well.
 
 ```{r,echo=FALSE,eval=TRUE,message=FALSE}
 library(ggplot2)
@@ -88,7 +90,7 @@ ggplotly(arrested_age)
 
 (Note: Interact with the graph to view the values)
 
-The trend of inhalant abusers being arrested preponderantly consisting of youth below 20 seems to have diminished over the years with a largely proportional number of abusers hailing from each age group. Some might argue that this indicates the effectiveness of CNB’s [*Structured Rehabilitation & Aftercare Programmes*](index.qmd), namely the [Drug Rehabilitation Centre (DRC)](index.qmd), Drug Supervision Scheme (DSS) and Community Rehabilitation Centre (CRC). However, this contradicts the findings of the IMH survey^2^ that suggest that youths make up a significant number of drug abusers. Thus, this trend being displayed might not be truly indicative of the real numbers of inhalant abusers on the ground as they could potentially be becoming more adept at avoiding being caught and arrested.
+The trend of inhalant abusers being arrested preponderantly consisting of youth below 20 seems to have diminished over the years with a largely proportional number of abusers hailing from each age group. Some might argue that this indicates the effectiveness of CNB's [*Structured Rehabilitation & Aftercare Programmes*](index.qmd), namely the [Drug Rehabilitation Centre (DRC)](index.qmd), Drug Supervision Scheme (DSS) and Community Rehabilitation Centre (CRC). However, this contradicts the findings of the IMH survey^2^ that suggest that youths make up a significant number of drug abusers. Thus, this trend being displayed might not be truly indicative of the real numbers of inhalant abusers on the ground as they could potentially be becoming more adept at avoiding being caught and arrested.
 
 ```{r,echo=FALSE,eval=TRUE,message=FALSE}
 library(ggplot2)
@@ -102,13 +104,13 @@ ggplotly(arrested_ethnicity)
 
 (Note: Interact with the graph to view the values)
 
-Earlier on, there seems to be a propensity of overrepresentation of Chinese and Malays amongst inhalant abusers arrested. However, the numbers have decreased and become more proportional across all ethnicities over the years. Even so, the Chinese seem to still consistently have the highest representation. Some might laud the effectiveness of the “Dadah itu Haram” campaign launched by the CNB in 2017 that works with Malay-Muslim organisations and the community to tackle the supposed over-representation of Malays involved with drugs^4^. Perhaps, a similar move could be considered specifically for the Chinese community too.
+Earlier on, there seems to be a propensity of overrepresentation of Chinese and Malays amongst inhalant abusers arrested. However, the numbers have decreased and become more proportional across all ethnicities over the years. Even so, the Chinese seem to still consistently have the highest representation. Some might laud the effectiveness of the "Dadah itu Haram" campaign launched by the CNB in 2017 that works with Malay-Muslim organisations and the community to tackle the supposed over-representation of Malays involved with drugs^4^. Perhaps, a similar move could be considered specifically for the Chinese community too.
 
----
+------------------------------------------------------------------------
 
 ^1^Central Narcotics Bureau. (2023, July 13). *Drug Information*. <https://www.cnb.gov.sg/drug-information/drugs-and-inhalants>
 
-^2^Chua, N. (2023, May 4). Hooked on heroin at 12: IMH survey finds starting mean age for drug consumption in S’pore at 15.9 years. *The Straits Times*. <https://www.straitstimes.com/singapore/hooked-on-heroin-at-12-worrying-trend-of-younger-drug-abusers>
+^2^Chua, N. (2023, May 4). Hooked on heroin at 12: IMH survey finds starting mean age for drug consumption in S'pore at 15.9 years. *The Straits Times*. <https://www.straitstimes.com/singapore/hooked-on-heroin-at-12-worrying-trend-of-younger-drug-abusers>
 
 ^3^Central Narcotics Bureau. (2023). *Data on inhalant abusers arrested*. <https://beta.data.gov.sg/collections/524/datasets/d_06dec2e253224d72d528ddf39f57a548/view>
 

@@ -4,11 +4,13 @@ title: "Drug Rehabilitation Centre"
 
 ## Drug Rehabilitation Centre in Singapore
 
+![](drc.jpg){fig-align="center"}
+
 Individuals with a moderate or higher risk of relapse, or those who are repeat drug abusers, will undergo rehabilitation at the Drug Rehabilitation Centre (DRC). Upon successful completion of the DRC programme, these individuals will not carry a criminal record, provided they are not under investigation for other drug or criminal offenses that may lead to charges in court. In such cases, if found guilty, the abuser may be charged for drug consumption and acquire a criminal record.
 
 Within the DRC, the Singapore Prison Service (SPS) conducts intensive rehabilitation programmes tailored to the individuals' rehabilitation needs. These encompass psychological interventions targeting drug use habits, family programmes enhancing relationship skills, and vocational training for employability to aid ex-abusers in reintegrating into society.
 
-The DRC categorises abusers based on the risk of reoffending, with treatment lasting 12 months or more. Notably, in 2019, the rehabilitation regime expanded to include third-time and above repeat pure drug abusers, aiming to facilitate their reintegration into society. 
+The DRC categorises abusers based on the risk of reoffending, with treatment lasting 12 months or more. Notably, in 2019, the rehabilitation regime expanded to include third-time and above repeat pure drug abusers, aiming to facilitate their reintegration into society.
 
 After release, individuals undergo urine and/or hair supervision to detect and deter potential relapse.
 
@@ -70,7 +72,7 @@ ggplotly(inmates_gender)
 
 (Note: Interact with the graph to view the values)
 
-The number of inmates in the DRC has considerably increased over the years, with male inmates making a vast majority over the female inmates. Similar to the gender proportions of [inhalant abusers arrested](abusers_arrested.qmd) over the years, it can be concluded that men have a higher risk of engaging in drug abuse and thus be subjected to the DRC in comparison to women. Yet, the increasing numbers of inmates might be symptomatic of shortcomings of the Central Narcotics Bureau’s (CNB) [*Preventive Drug Education (PDE)*](index.qmd) and [*Structured Rehabilitation & Aftercare Programmes*](index.qmd) strategies.
+The number of inmates in the DRC has considerably increased over the years, with male inmates making a vast majority over the female inmates. Similar to the gender proportions of [inhalant abusers arrested](abusers_arrested.qmd) over the years, it can be concluded that men have a higher risk of engaging in drug abuse and thus be subjected to the DRC in comparison to women. Yet, the increasing numbers of inmates might be symptomatic of shortcomings of the Central Narcotics Bureau's (CNB) [*Preventive Drug Education (PDE)*](index.qmd) and [*Structured Rehabilitation & Aftercare Programmes*](index.qmd) strategies.
 
 ```{r,echo=FALSE,eval=TRUE,message=FALSE}
 library(ggplot2)
@@ -105,7 +107,7 @@ ggplotly(inmates_education)
 
 Amongst the inmates in the DRC, a large majority consistently consists of those with only secondary education level, followed by those with only primary education level and then by those with only vocational education level before the other education levels. While the numbers provided by the CNB^2^ here do not segment these groups further into age groups within each education level, it should be safe to assume based on the previous numbers on age groups of inmates in the DRC that most of those in each education level are no longer youth below 21. Along this line, most of those even in the three mentioned education level might have left school upon obtaining said highest education level. This further emphasises the need for greater focus of [*Preventive Drug Education (PDE)*](index.qmd) outside schools and at the workplace or other environments to target more adults instead of just youths.
 
----
+------------------------------------------------------------------------
 
 ^1^Central Narcotics Bureau. (2023, November 15). *CNB Explains*. <https://www.cnb.gov.sg/CNBExplains/where-do-adult-drug-abusers-go-when-caught>
 

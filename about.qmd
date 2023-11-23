@@ -4,7 +4,7 @@ title: "About"
 
 ## Author
 
-![](hariz.jpg){width="50%"}
+![](hariz.jpg){fig-align="center" width="50%"}
 
 Hello there! I am Hariz Emran. I am currently a Year 3 NUS undergraduate, majoring in Malay Studies and Communications & New Media. My interests lie in power structures as well as issues of religion and social inequalities.
 
